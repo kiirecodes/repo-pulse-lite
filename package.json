@@ -1,0 +1,21 @@
+{
+  "name": "repo-pulse-lite",
+  "version": "1.0.0",
+  "description": "A minimal web app that detects stale GitHub pull requests and issues - Cloudflare Pages version",
+  "scripts": {
+    "dev": "concurrently \"npm run wrangler:dev\" \"npm run client:dev\"",
+    "build": "npm run client:build",
+    "deploy": "npm run client:build && wrangler pages deploy dist",
+    "wrangler:dev": "wrangler pages dev dist --port 8787",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "install-all": "npm install && cd client && npm install"
+  },
+  "keywords": ["github", "pull-requests", "issues", "stale", "repository", "cloudflare", "serverless"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.22.1",
+    "concurrently": "^8.2.2"
+  }
+}
